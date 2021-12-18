@@ -11,7 +11,10 @@ app.get('/', (req, res) => {
     res.json({
         message: `Hello from ${HOSTNAME}`,
         timestamp: Date.now(),
-        app: env.APP_NAME
+        app: env.APP_NAME,
+        headers: req.headers,
+        ip: req.ip,
+        hostname: req.hostname,
     });
 });
 
